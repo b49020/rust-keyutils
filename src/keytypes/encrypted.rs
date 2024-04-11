@@ -101,6 +101,8 @@ pub enum MasterKeyType {
     ///
     /// Note that user keys are only as trustworthy as the code which loaded the key.
     User,
+    /// A logon key.
+    Logon,
 }
 
 impl MasterKeyType {
@@ -109,6 +111,7 @@ impl MasterKeyType {
         match self {
             MasterKeyType::Trusted => "trusted",
             MasterKeyType::User => "user",
+            MasterKeyType::Logon => "logon",
         }
     }
 }
