@@ -138,7 +138,7 @@ pub enum Payload {
     /// Use this with `add_key`.
     Load {
         /// The blob to load into the key.
-        blob: Vec<u8>,
+        blob: String,
     },
     /// Update a key.
     ///
@@ -173,7 +173,7 @@ impl KeyPayload for Payload {
             },
             Payload::Load {
                 blob,
-            } => format!("load {:x}", ByteBuf(blob)),
+            } => format!("load {}", blob),
             Payload::Update {
                 keytype,
                 description,
